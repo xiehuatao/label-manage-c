@@ -1,12 +1,13 @@
 import React from 'react';
+import {withRouter} from "react-router-dom";
 
 function ClassifyManage() {
 
     return (
-        <div style={{width: "100px", height: "100px", color: "red"}}>
-
+        <div>
+            classifyManage
         </div>
     )
 }
 
-export default ClassifyManage;
+export default withRouter(ClassifyManage);

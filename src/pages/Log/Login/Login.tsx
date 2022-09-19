@@ -1,7 +1,8 @@
 import {Button, Checkbox, Form, Input, message} from 'antd';
 import React from 'react';
 import Wrapper from "./styled";
-import {useHistory} from "react-router-dom";
+import {useHistory, withRouter} from "react-router-dom";
+import ROUTE from "../../../enums/route";
 
 const login = () => {
 
@@ -11,7 +12,7 @@ const login = () => {
     const {password,username} = values;
     if(password === '123456' && username === 'admin') {
       message.success("登录成功");
-      history.push('/manage/classify-manage');
+        history.push(ROUTE.CLASSIFY_MANAGE)
     } else {
       message.error("登录失败，请检查账户及密码是否争取");
     }
@@ -78,8 +79,7 @@ const login = () => {
         </Form.Item>
       </Form>
     </Wrapper>
-
   );
 };
 
-export default login;
+export default withRouter(login);
