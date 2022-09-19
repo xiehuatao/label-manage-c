@@ -1,4 +1,5 @@
 import React from "react";
+import Wrapper from "./styled";
 import { Switch, Route, withRouter} from "react-router-dom";
 import Header from "../header";
 import ClassifyManage from "../classifyManage";
@@ -15,7 +16,7 @@ import ROUTE from "../../enums/route";
 function Main() {
 
     return (
-        <div>
+        <Wrapper>
             <Header/>
             <Switch>
                 <Route path={ROUTE.CLASSIFY_MANAGE} component={ClassifyManage}/>
@@ -27,7 +28,7 @@ function Main() {
                 <Route path={ROUTE.INFO_REVISE} component={ReviseInfo}/>
                 <Route path={ROUTE.INFO_VIEW} component={ViewInfo}/>
             </Switch>
-        </div>
+        </Wrapper>
     )
 }
 

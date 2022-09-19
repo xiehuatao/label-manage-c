@@ -4,9 +4,9 @@ import {withRouter} from "react-router-dom";
 function ClassifyManage() {
 
     return (
-        <div>
+        <>
             classifyManage
-        </div>
+        </>
     )
 }
 

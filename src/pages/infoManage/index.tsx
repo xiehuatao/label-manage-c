@@ -5,9 +5,9 @@ import {withRouter} from "react-router-dom";
 function InfoManage() {
 
     return (
-        <div>
+        <>
             infoManage
-        </div>
+        </>
     )
 }
 

@@ -7,14 +7,14 @@ import Main from "./pages/main";
 function App() {
 
   return (
-      <div>
+      <>
           <BrowserRouter>
               <Switch>
                   <Route exact path='/' component={Login}/>
                   <Route path='/main/*' component={Main}/>
               </Switch>
           </BrowserRouter>
-      </div>
+      </>
   );
 }
 
