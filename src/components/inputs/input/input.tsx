@@ -21,7 +21,7 @@ function MyInput(props: {type: string; value: string; tip: string; submit: (val:
             </div>
             <div className={"input"}>
                 {props.type === "select" ?
-                    <Select placeholder={"请输入"} id={props.tip + "input"} onSelect={(val:string) => submit(val)}>
+                    <Select placeholder={"请输入"} id={props.tip + "input"} onSelect={(val:string) => submit(val)} allowClear >
                         {
                             props.options.map((option) => {
                                 return <option value={option}>{option}</option>
@@ -29,10 +29,10 @@ function MyInput(props: {type: string; value: string; tip: string; submit: (val:
                         }
                     </Select>
                     :
-                    <Input value={value} id={props.tip + "input"} placeholder={"请输入" + props.tip} style={{height: "32px"}}
+                    <Input value={value} id={props.tip + "input"} placeholder={"请输入" + props.tip} style={{height: "30px"}}
                            onChange={(e) => {
                                submit(e.target.value)
-                           }}
+                           }} allowClear
                     />
                 }
             </div>
