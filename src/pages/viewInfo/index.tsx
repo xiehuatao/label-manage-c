@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {withRouter} from "react-router-dom";
+import BasicInfo from "../../components/basicInfo";
 
 
 function ViewInfo() {
+    const [values, setValues] = useState<object>({});
 
     return (
         <>
-            viewInfo
+            <BasicInfo values={values} operation={"view"}/>
         </>
     )
 }

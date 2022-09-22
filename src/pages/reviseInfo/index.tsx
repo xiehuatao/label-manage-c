@@ -1,12 +1,22 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {withRouter} from "react-router-dom";
+import BasicInfo from "../../components/basicInfo";
 
 
 function ReviseInfo() {
+    const [values, setValues] = useState<object>({});
+
+    const submit = (val: object) => {
+        setValues(val);
+    }
+
+    useEffect(() => {
+
+    })
 
     return (
         <>
-            reviseInfo
+            <BasicInfo values={values} submit={submit} operation={"revise"}/>
         </>
     )
 }
