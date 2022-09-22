@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter} from "react-router-dom";
+import {useHistory, withRouter} from "react-router-dom";
 import {Add, AddBtn, Box, Header,Footer } from './styled';
 import {Input} from 'antd'
 import { Button } from 'antd';
@@ -8,8 +8,9 @@ import ManageTable from "./components/ManageTable";
 import ROUTE from "../../enums/route";
 
 function ClassifyManage() {
+    const history = useHistory();
     const add = () => {
-        console.log('yyyy');
+        history.push(ROUTE.CLASSIFY_NEW);
     }
     return (
         <>
