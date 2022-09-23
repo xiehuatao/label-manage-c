@@ -19,11 +19,12 @@ const ManageTable = () => {
 
     const view = () => {
         console.log("view")
-        history.push(ROUTE.INFO_VIEW);
+        history.push(ROUTE.CLASSIFY_VIEW);
     }
 
     const revise = () => {
         console.log("revise")
+        history.push(ROUTE.CLASSIFY_REVISE);
 
     }
     const columns: ColumnsType<DataType> = [

@@ -6,7 +6,7 @@ function ViewClassify() {
 
     return (
         <>
-            viewVlassify
+            1111
         </>
     )
 }
