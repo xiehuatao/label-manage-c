@@ -9,7 +9,7 @@ function ReviseClassify() {
     }
     return (
         <>
-            <ClassifyForm btnOperate={onclickRevise} judgeNew={false}/>
+            <ClassifyForm btnOperate={onclickRevise} fun={"revise"}/>
         </>
     )
 }

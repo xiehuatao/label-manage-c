@@ -9,7 +9,7 @@ const NewClassify: React.FC = () => {
         console.log("新增提交")
     }
     return (
-        <ClassifyForm btnOperate={onclickNew} judgeNew={true}/>
+        <ClassifyForm btnOperate={onclickNew} fun={"new"}/>
     );
 }
 

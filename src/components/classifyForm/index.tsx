@@ -6,7 +6,7 @@ import {withRouter} from "react-router-dom";
 
 
 function ClassifyForm (props:any) {
-    const plainOptions = ['管理员','用户'];
+    const plainOptions = ['运营机构','主管财政','采购人','供应商','代理机构','专家','银行'];
     const CheckboxGroup = Checkbox.Group;
     const [checkedList, setCheckedList] = useState<CheckboxValueType[]>();
     const [indeterminate, setIndeterminate] = useState(true);
@@ -32,12 +32,14 @@ function ClassifyForm (props:any) {
             <Row gutter={16}>
                 <Col span={2}>
                     <Form.Item label="类型名称" style={{marginBottom: 0}} required={true}>
-                        <Input placeholder="请输入类型名称" id="error" disabled={props.judgeNew}/>
+                        <Input placeholder="请输入类型名称" id="error"
+                               disabled={!(props.fun === "new")}/>
                     </Form.Item>
                 </Col>
                 <Col span={2} offset={2}>
                     <Form.Item label="类型编码" style={{marginBottom: 0}} required={true} >
-                        <Input placeholder="请输入编码" id="error" disabled={props.judgeNew}/>
+                        <Input placeholder="请输入编码" id="error"
+                               disabled={!(props.fun === "new")}/>
                     </Form.Item>
                 </Col>
                 <Col span={1}>
@@ -76,7 +78,7 @@ function ClassifyForm (props:any) {
                     </Form.Item>
                 </Col>
             </Row>
-            <Row gutter={0}>
+            <Row gutter={0} style={(props.fun==="view") ? {display:"none"} : {}}>
                 <Col span={1}>
                     <Form.Item>
                         <Button type="primary" onClick={props.btnOperate}>
