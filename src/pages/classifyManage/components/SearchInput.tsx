@@ -1,4 +1,4 @@
-import {Input, Space} from 'antd';
+import {Button, Input, Space} from 'antd';
 import React, {useState} from 'react';
 import Inputs from "../../../components/inputs/inputs";
 
@@ -11,12 +11,12 @@ function SearchInput() {
     const inputs: object[] = [
         {
             type: "input" ,
-            tip: "类型",
+            tip: "类型名称",
             value: values[count++],
         },
         {
             type: "input" ,
-            tip: "编码",
+            tip: "类型编码",
             value: values[count++],
         },
         {
@@ -26,6 +26,9 @@ function SearchInput() {
             options: ["所有", "启用", "禁用"],
         }
     ]
+    const Search = () => {
+    }
+
     const submit = (data: string, index: number) => {
         const temp: string[] | undefined = values;
         if (temp) {
@@ -36,6 +39,7 @@ function SearchInput() {
     return(
         <>
             <Inputs inputs={inputs} submit={submit}/>
+            <Button type={"primary"} className={"searchBtn"} onClick={Search}>搜索</Button>
         </>
     )
 }

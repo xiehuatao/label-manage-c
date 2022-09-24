@@ -6,6 +6,7 @@ import {withRouter} from "react-router-dom";
 
 
 function ClassifyForm (props:any) {
+
     const plainOptions = ['运营机构','主管财政','采购人','供应商','代理机构','专家','银行'];
     const CheckboxGroup = Checkbox.Group;
     const [checkedList, setCheckedList] = useState<CheckboxValueType[]>();
@@ -31,13 +32,13 @@ function ClassifyForm (props:any) {
         <Form colon={false} layout={"vertical"}>
             <Row gutter={16}>
                 <Col span={2}>
-                    <Form.Item label="类型名称" style={{marginBottom: 0}} required={true}>
+                    <Form.Item label="类型名称" style={{marginBottom: 0}} required={true} rules={[{ required: true, message: '不能为空' }]}>
                         <Input placeholder="请输入类型名称" id="error"
                                disabled={!(props.fun === "new")}/>
                     </Form.Item>
                 </Col>
                 <Col span={2} offset={2}>
-                    <Form.Item label="类型编码" style={{marginBottom: 0}} required={true} >
+                    <Form.Item label="类型编码" style={{marginBottom: 0}} required={true} rules={[{ required: true, message: '不能为空' }]} >
                         <Input placeholder="请输入编码" id="error"
                                disabled={!(props.fun === "new")}/>
                     </Form.Item>
@@ -54,6 +55,7 @@ function ClassifyForm (props:any) {
                     <Form.Item
                         label="描述"
                         required={true}
+                        rules={[{ required: true, message: '不能为空' }]}
                     >
                         <Input.TextArea rows={4} style={{margin:0}}/>
                     </Form.Item>
@@ -62,8 +64,7 @@ function ClassifyForm (props:any) {
 
             <Row>
                 <Col span={14}>
-                    <Form.Item hasFeedback validateStatus="success">
-                        <span>可用用户类型</span>
+                    <Form.Item hasFeedback validateStatus="success" label="可用用户类型" required={true}>
                         <Checkbox indeterminate={indeterminate} onChange={onCheckAllChange} checked={checkAll}>
                             全选
                         </Checkbox>

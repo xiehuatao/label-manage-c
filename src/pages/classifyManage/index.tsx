@@ -1,7 +1,6 @@
 import React from 'react';
 import {useHistory, withRouter} from "react-router-dom";
-import {Add, AddBtn, Box, Header,Footer } from './styled';
-import {Input} from 'antd'
+import { AddBtn, Box, Header,Footer } from './styled';
 import { Button } from 'antd';
 import SearchInput from "./components/SearchInput";
 import ManageTable from "./components/ManageTable";
@@ -18,7 +17,7 @@ function ClassifyManage() {
                <Header>
                    <SearchInput/>
                </Header>
-               <AddBtn>
+               <AddBtn style={{marginTop:15}}>
                    <Button type={"primary"} className={"addBtn"} onClick={add} style={{margin: "20px auto 20px"}}>新增</Button>
                </AddBtn>
                <Footer>
